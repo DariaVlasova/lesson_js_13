@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css"> 
+</head>
+<body>
+    <div class="container">
+    <h1>Задача 2.  Нехай x_0=x_1=1, x_i=x_i-1+2x_i-2 де i=2,3 . Визначити x_n.
+       Розв’язати з використанням рекурсивних і нерекурсивних алгоритмів
+
+    </h1>
+    <a href="./index.html">Повернутись до задач</a>
+    
+        <script>
+     function getUsingRecursion(n){
+  if (n<=1) return 1
+  else 
+  return getUsingRecursion(n-1)+2*getUsingRecursion(n-2)
+}
+ let recursionMethod= getUsingRecursion(10)
+ document.write(`Розв'язання використовуючи рекурсивний метод :"${recursionMethod}"<br>`)
+function getUsingNotRecursion(n){
+     let x_0=x_1=1
+     let x_n
+     for(let i=2; i<=n; i++){
+        x_n=x_1+2*x_0
+        x_0=x_1
+        x_1=x_n
+     }
+  return x_n 
+}
+
+let recursionNotMethod=getUsingNotRecursion(10)
+document.write(`Розв'язання використовуючи нерекурсивний метод :"${recursionNotMethod}"`)
+</script>
+</body>
+
+</html>
